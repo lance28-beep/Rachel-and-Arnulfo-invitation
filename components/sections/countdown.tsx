@@ -21,8 +21,8 @@ export function Countdown() {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      // Create target date explicitly for January 10, 2026 at 2:00 PM
-      const targetDate = new Date("2026-01-10T14:00:00+08:00").getTime() // GMT+8 timezone
+      // Target: Thursday, December 4, 2025 at 4:00 PM (local time)
+      const targetDate = new Date("2025-12-04T16:00:00").getTime()
       const now = new Date().getTime()
       const difference = targetDate - now
 
@@ -215,10 +215,10 @@ export function Countdown() {
                 {/* Day and Month */}
                 <div className="text-center sm:text-right">
                   <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#FFF6E7] leading-none drop-shadow-lg">
-                    January
+                    December
                   </p>
                   <p className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-[#BB8A3D] leading-none mt-1 drop-shadow-lg">
-                    10
+                    4
                   </p>
                 </div>
                 
@@ -228,7 +228,7 @@ export function Countdown() {
                 {/* Year */}
                 <div className="text-center sm:text-left">
                   <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#FFF6E7] leading-none drop-shadow-lg">
-                    2026
+                    2025
                   </p>
                 </div>
               </div>
@@ -239,7 +239,7 @@ export function Countdown() {
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-[#BB8A3D] rounded-full animate-pulse" />
                 <p className="text-lg sm:text-xl md:text-2xl font-sans font-semibold text-[#CDAC77] tracking-wide drop-shadow-md">
-                  2:00 PM
+                  4:00 PM
                 </p>
                 <div className="w-2 h-2 bg-[#BB8A3D] rounded-full animate-pulse" />
               </div>

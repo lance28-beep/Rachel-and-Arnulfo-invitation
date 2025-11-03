@@ -3,14 +3,15 @@
 import { useState, useEffect } from "react"
 import { motion } from "motion/react"
 import { Instagram, Facebook, MapPin, Calendar, Clock, Heart, MessageCircle } from "lucide-react"
+import { siteConfig } from "@/content/site"
 
 export function Footer() {
   const year = new Date().getFullYear()
 
   const quotes = [
-    "In every love story, there's a moment when two hearts become one, and ours is just beginning.",
-    "Two souls, one heart—forever entwined in the journey of love and faith together.",
-    "Love is not about finding the perfect person, but learning to see an imperfect person perfectly."
+    "Fifty years of love is not measured by time, but by the countless moments shared in faith, laughter, and devotion.",
+    "Golden hearts, bound by a promise that only grows brighter through the years.",
+    "A lifetime together begins with a vow… and continues with choice, patience, and grace — every single day."
   ]
 
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0)
@@ -71,6 +72,23 @@ export function Footer() {
     { label: "RSVP", href: "#guest-list" },
   ] as const
 
+  const parseDateParts = (dateString: string) => {
+    const tryDate = new Date(dateString)
+    if (!isNaN(tryDate.getTime())) {
+      const month = tryDate.toLocaleString(undefined, { month: 'long' })
+      const day = String(tryDate.getDate())
+      const year = String(tryDate.getFullYear())
+      return { month, day, year }
+    }
+    const parts = dateString.split(/\s+/)
+    const month = parts[0] ?? ""
+    const day = (parts[1] ?? "").replace(/\D/g, "")
+    const year = parts[2] ?? ""
+    return { month, day, year }
+  }
+
+  const { month, day, year: yearStr } = parseDateParts(siteConfig.ceremony.date)
+
   return (
     <footer 
       className="relative z-20 mt-16 text-cream overflow-hidden bg-gradient-to-b from-[#402921] via-[#583016] to-[#402921]"
@@ -129,10 +147,10 @@ export function Footer() {
                 {/* Day and Month */}
                 <div className="text-center sm:text-right">
                   <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#F0F0F0] leading-none drop-shadow-lg">
-                    January
+                    {month}
                   </p>
                   <p className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-[#D1AB6D] leading-none mt-1 drop-shadow-lg">
-                    10
+                    {day}
                   </p>
                 </div>
                 
@@ -142,7 +160,7 @@ export function Footer() {
                 {/* Year */}
                 <div className="text-center sm:text-left">
                   <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#F0F0F0] leading-none drop-shadow-lg">
-                    2026
+                    {yearStr}
                   </p>
                 </div>
               </div>
@@ -153,7 +171,7 @@ export function Footer() {
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-[#D1AB6D] rounded-full animate-pulse" />
                 <p className="text-lg sm:text-xl md:text-2xl font-sans font-semibold text-[#E0CFB5] tracking-wide drop-shadow-md">
-                  2:00 PM
+                  {siteConfig.ceremony.time}
                 </p>
                 <div className="w-2 h-2 bg-[#D1AB6D] rounded-full animate-pulse" />
               </div>
@@ -176,16 +194,16 @@ export function Footer() {
                 <div className="w-12 h-12 bg-white/15 rounded-full flex items-center justify-center border border-white/20">
                   <Heart className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="font-serif text-3xl md:text-4xl font-bold text-white">Erda & Russell</h3>
+                <h3 className="font-serif text-3xl md:text-4xl font-bold text-white">{siteConfig.couple.bride} & {siteConfig.couple.groom}</h3>
               </div>
               <div className="space-y-4">
                 <div className="flex items-center gap-3 font-lora text-white/95">
                   <Calendar className="w-5 h-5 text-white/80" />
-                  <span className="text-lg">January 10, 2026</span>
+                  <span className="text-lg">{siteConfig.ceremony.date}</span>
                 </div>
                 <div className="flex items-center gap-3 font-lora text-white/90">
                   <MapPin className="w-5 h-5 text-white/70" />
-                  <span>San Jose the Husband of Mary Parish, Buyagan, La Trinidad, Benguet</span>
+                  <span>{siteConfig.ceremony.location}</span>
                 </div>
               </div>
             </div>
@@ -215,11 +233,11 @@ export function Footer() {
               <div className="space-y-3 font-lora text-white/90 text-sm">
                 <div className="flex items-center gap-3">
                   <MapPin className="w-4 h-4 text-white/70" />
-                  <span>San Jose the Husband of Mary Parish, Buyagan, La Trinidad, Benguet</span>
+                  <span>{siteConfig.ceremony.location}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Clock className="w-4 h-4 text-white/70" />
-                  <span>2:00 PM</span>
+                  <span>{siteConfig.ceremony.time}</span>
                 </div>
               </div>
             </motion.div>
@@ -234,7 +252,7 @@ export function Footer() {
               <div className="space-y-3 font-lora text-white/90 text-sm">
                 <div className="flex items-center gap-3">
                   <MapPin className="w-4 h-4 text-white/70" />
-                  <span>D & L Garden Pavilion, Halsema Highway, La Trinidad, Benguet</span>
+                  <span>{siteConfig.reception.location}</span>
                 </div>
               </div>
             </motion.div>
@@ -250,7 +268,7 @@ export function Footer() {
                 <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/5 ring-1 ring-white/15 hover:bg-white/10 transition-colors">
                   <Instagram className="w-5 h-5 text-white" />
                 </a>
-                <a href="https://www.facebook.com/knginalawagan" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/5 ring-1 ring-white/15 hover:bg-white/10 transition-colors">
+                <a href="https://www.facebook.com/gayannv" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/5 ring-1 ring-white/15 hover:bg-white/10 transition-colors">
                   <Facebook className="w-5 h-5 text-white" />
                 </a>
                 <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/5 ring-1 ring-white/15 hover:bg-white/10 transition-colors">
@@ -278,7 +296,7 @@ export function Footer() {
         <motion.div className="border-t border-white/20 pt-8" variants={fadeInUp}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <p className="text-white/85 font-lora text-sm">© {year} Erda & Russell. All rights reserved.</p>
+              <p className="text-white/85 font-lora text-sm">© {year} {siteConfig.couple.bride} & {siteConfig.couple.groom}. All rights reserved.</p>
               <p className="text-white/90 font-lora text-sm mt-1">
                 Made with 💕 for our special day
               </p>
@@ -313,7 +331,7 @@ export function Footer() {
 
         {/* Floating Messenger Button */}
         <a
-          href="https://m.me/knginalawagan"
+          href="https://m.me/gayannv"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Contact us on Messenger"

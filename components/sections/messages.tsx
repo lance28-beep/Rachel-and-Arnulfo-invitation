@@ -45,7 +45,7 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
 
     try {
       await fetch(
-        "https://docs.google.com/forms/d/e/1FAIpQLSeqCMMtFoMbxcTsCQiDrXhwpCXjTB3xikmJHG_1cvcFy8SkKw/formResponse",
+        "https://docs.google.com/forms/d/e/1FAIpQLSecKkR24d4imyAElx7O85obIdrlxxWg9-aq4FdhxIGtZnwNyQ/formResponse",
         {
           method: "POST",
           mode: "no-cors",
@@ -254,7 +254,7 @@ export function Messages() {
   const fetchMessages = useCallback(() => {
     setLoading(true)
     fetch(
-      "https://script.google.com/macros/s/AKfycbxHz4_McaKm-3q-PlGD2d4orUAsrH5YexGaYa4ie6g1Q1wlW27YFLR_egoFkwmckXoE_Q/exec"
+      "https://script.google.com/macros/s/AKfycbzdyoe_b6EqXz-6qlpBvNOcVH-Q3bRHnCYj53kSzuVxoARHoUEanxh25Hh_tBbllVXOdA/exec"
     )
       .then((res) => res.json())
       .then((data) => {
@@ -317,8 +317,8 @@ export function Messages() {
               Share Your Heartfelt Wishes
             </h3>
             <p className="text-sm sm:text-base lg:text-lg text-white/80 font-lora leading-relaxed max-w-2xl mx-auto px-4">
-              Your messages of love and joy will be treasured forever. 
-              Share your memories, well wishes, and congratulations for the happy couple.
+              Your words of love and joy will forever be a part of their story. 
+              Send your warm wishes, fond memories, and heartfelt congratulations to celebrate this golden milestone with Rachel & Arnulfo.
             </p>
           </div>
         </div>

@@ -16,6 +16,7 @@ import { FAQ } from "@/components/sections/faq"
 import { SnapShare } from "@/components/sections/snap-share"
 import { Footer } from "@/components/sections/footer"
 import BackgroundMusic from "@/components/background-music"
+import { AnniversarySection } from "@/components/sections/anniversary"
 
 const Silk = dynamic(() => import("@/components/silk"), { ssr: false })
 const GuestList = dynamic(() => import("@/components/sections/guest-list").then(mod => ({ default: mod.GuestList })), { ssr: false })
@@ -27,20 +28,21 @@ export default function Home() {
       {/* Silk Background Animation */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Suspense fallback={<div className="w-full h-full bg-gradient-to-b from-primary/10 to-secondary/5" />}>
-          <Silk speed={5} scale={1.1} color="#8D8E7C" noiseIntensity={0.8} rotation={0.3} />
+          <Silk speed={5} scale={1.1} color="#dbae4b" noiseIntensity={0.8} rotation={0.3} />
         </Suspense>
       </div>
 
       {/* Content */}
       <div className="relative z-10">
         <Hero />
+        <AnniversarySection />
         <Countdown />
         <Narrative />
         <Gallery />
         <Messages />
         <Details />
-        <Entourage />
-        <PrincipalSponsors />
+        {/* <Entourage /> */}
+        {/* <PrincipalSponsors /> */}
         <GuestList />
         <BookOfGuests />
         <Registry />

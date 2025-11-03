@@ -13,7 +13,7 @@ export function SnapShare() {
   const [isMobile, setIsMobile] = useState(false)
 
   const websiteUrl = typeof window !== "undefined" ? window.location.href : "https://example.com"
-  const hashtags = ["#ErdaAndRussell", "#ErdaAndRussellWedding"]
+  const hashtags = ["#RachelAndArnulfoAt50", "#ForeverRachelAndArnulfo"]
   const shareText = `Join us in celebrating our special day! Check out our wedding website: ${websiteUrl} ${hashtags.join(" ")} 💕`
 
   useEffect(() => {
@@ -221,11 +221,12 @@ export function SnapShare() {
         <motion.div className="text-center mt-8" variants={fadeInUp}>
             <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg border border-[#BB8A3D]/25 max-w-3xl mx-auto">
             <p className="font-lora text-[#402921] text-base sm:text-lg leading-relaxed mb-4">
-              We are so excited to celebrate our love with you! See you on our special day!
+            Our hearts are full of excitement as we celebrate this moment of love.
+            We can’t wait to share our special day with you!
             </p>
             <div className="flex items-center justify-center gap-2">
               <div className="text-center">
-                <span className="block font-playfair text-[#402921] font-bold text-lg sm:text-xl">– Erda & Russell –</span>
+                <span className="block font-playfair text-[#402921] font-bold text-lg sm:text-xl">– Rachel & Arnulfo –</span>
               </div>
             </div>
           </div>

@@ -12,27 +12,32 @@ const faqItems: FAQItem[] = [
   {
     question: "What are the theme and motif?",
     answer:
-      "Theme: Classic. Motif colors: #402921, #BB8A3D, #CDAC77, #FFF6E7. [COLOR_PALETTE]",
+      "Theme: Classic. Motif colors: #866347, #C9A58D, #CEB08E, #F1E8E3, #FFE5E4. [COLOR_PALETTE]",
   },
   {
     question: "What is the dress code?",
     answer:
-      "Principal Sponsors are requested to wear any shade of Gold, while Guests are encouraged to come in Semi-formal attire and avoid casual clothing.",
+      "Formal in Earth Color (everyone)",
   },
   {
     question: "When and where is the ceremony?",
     answer:
-      "The ceremony will be held on January 10, 2026 at 2:00 PM at San Jose the Husband of Mary Parish, Buyagan, La Trinidad, Benguet.",
+      "December 4, 2025 at 4:00 PM at Holy Cross Chapel, 570TH.",
   },
   {
     question: "Where is the reception?",
     answer:
-      "The reception will follow the ceremony at D & L Garden Pavilion, Halsema Highway, La Trinidad, Benguet.",
+      "Following the ceremony at CityState Asturias Hotel, Palawan, Philippines.",
   },
   {
     question: "When is the RSVP deadline?",
     answer:
-      "Kindly RSVP by December 20,2025. Your response will help us finalize our guest list. Thank you!. [RSVP_LINK]Click here to RSVP[/RSVP_LINK]",
+      "Kindly RSVP by November 20, 2025. Your response will help us finalize our guest list. Thank you! [RSVP_LINK]Click here to RSVP[/RSVP_LINK]",
+  },
+  {
+    question: "How do I RSVP and confirm my attendance?",
+    answer:
+      "Search for your name in the guest list and confirm your participation. If your name isn't listed, don't worry — you can request to join by sending your details to the couple through the RSVP section. [RSVP_LINK]Go to RSVP[/RSVP_LINK]",
   },
   {
     question: "Is there parking available?",

@@ -11,6 +11,12 @@ export function Details() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
   const [showImageModal, setShowImageModal] = useState<string | null>(null)
 
+  // Updated event details
+  const ceremonyVenue = "Holy Cross Military Chapel"
+  const ceremonyLocation = "PQX2+GWW, Puerto Princesa City, Palawan"
+  const ceremonyType = "Catholic church"
+  const receptionVenue = "Citystate Asturias Hotel Palawan"
+  const receptionLocation = "South National Highway, Puerto Princesa City, 5300 Palawan"
   // Handle ESC key to close modal
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -47,8 +53,8 @@ export function Details() {
   }
 
   // Generate Google Maps links
-  const ceremonyMapsLink = `https://maps.google.com/?q=${encodeURIComponent(siteConfig.ceremony.location)}`
-  const receptionMapsLink = `https://maps.google.com/?q=${encodeURIComponent(siteConfig.reception.location)}`
+  const ceremonyMapsLink = "https://www.google.com/maps/place/Holy+Cross+Military+Chapel/@9.7488134,118.7490921,17z/data=!3m1!4b1!4m6!3m5!1s0x33b563e4fcc09a43:0xbb495384ca4bff52!8m2!3d9.7488134!4d118.751667!16s%2Fg%2F11txjr7tf7?entry=ttu&g_ep=EgoyMDI1MTAyOS4yIKXMDSoASAFQAw%3D%3D"
+  const receptionMapsLink = "https://www.google.com/maps/place/Citystate+Asturias+Hotel+Palawan/@9.7651432,118.7451892,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipOVLJdmXp_YsZf3a8nHV7sMqngYmiP25cnXUhaE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipOVLJdmXp_YsZf3a8nHV7sMqngYmiP25cnXUhaE%3Dw128-h86-k-no!7i2048!8i1368!4m10!3m9!1s0x33b563982e86ffed:0x45d1901a7d4247ca!5m2!4m1!1i2!8m2!3d9.7656791!4d118.7454604!10e5!16s%2Fg%2F1tgqfyzw?entry=ttu&g_ep=EgoyMDI1MTAyOS4yIKXMDSoASAFQAw%3D%3D"
 
   const openInMaps = (link: string) => {
     window.open(link, '_blank', 'noopener,noreferrer')
@@ -148,7 +154,7 @@ export function Details() {
                 <Navigation className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5" />
               </button>
               <button
-                onClick={() => copyToClipboard(siteConfig.ceremony.location, 'ceremony')}
+                onClick={() => copyToClipboard(ceremonyLocation, 'ceremony')}
                 className="p-2 sm:p-2.5 text-[#402921]/70 hover:text-[#402921] hover:bg-gradient-to-br hover:from-[#402921]/10 hover:to-[#402921]/5 rounded-xl transition-all duration-300 hover:scale-110 hover:shadow-md active:scale-95"
                 title="Copy ceremony details"
               >
@@ -158,8 +164,8 @@ export function Details() {
           </div>
 
           <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 md:mb-6 relative z-10">
-            <p className="text-sm sm:text-base md:text-lg font-semibold text-[#402921]">{siteConfig.ceremony.venue}</p>
-            <p className="text-xs sm:text-sm text-[#402921] opacity-70">Buyagan, La Trinidad, Benguet</p>
+            <p className="text-sm sm:text-base md:text-lg font-semibold text-[#402921]">{ceremonyVenue}</p>
+            <p className="text-xs sm:text-sm text-[#402921] opacity-70">{ceremonyType}</p>
             <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base text-[#402921]">
               <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#BB8A3D] flex-shrink-0" />
               <span>
@@ -176,7 +182,7 @@ export function Details() {
             >
               <Image
                 src="/Details/church.png"
-                alt={siteConfig.ceremony.location}
+                alt={ceremonyLocation}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -243,7 +249,7 @@ export function Details() {
                 <Navigation className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5" />
               </button>
               <button
-                onClick={() => copyToClipboard(siteConfig.reception.location, 'reception')}
+                onClick={() => copyToClipboard(receptionLocation, 'reception')}
                 className="p-2 sm:p-2.5 text-[#402921]/70 hover:text-[#402921] hover:bg-gradient-to-br hover:from-[#402921]/10 hover:to-[#402921]/5 rounded-xl transition-all duration-300 hover:scale-110 hover:shadow-md active:scale-95"
                 title="Copy reception details"
               >
@@ -253,8 +259,8 @@ export function Details() {
               </div>
 
           <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 md:mb-6 relative z-10">
-            <p className="text-sm sm:text-base md:text-lg font-semibold text-[#402921]">{siteConfig.reception.venue}</p>
-            <p className="text-xs sm:text-sm text-[#402921] opacity-70"> Buyagan, La Trinidad, Benguet</p>
+            <p className="text-sm sm:text-base md:text-lg font-semibold text-[#402921]">{receptionVenue}</p>
+            <p className="text-xs sm:text-sm text-[#402921] opacity-70">{receptionLocation}</p>
             <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base text-[#402921]">
               <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#BB8A3D] flex-shrink-0" />
               <span>
@@ -270,8 +276,8 @@ export function Details() {
               onClick={() => setShowImageModal('reception')}
             >
               <Image
-                src="/Details/D-L-Garden.png"
-                alt={siteConfig.reception.location}
+                src="/Details/citystateasturiashotel.png"
+                alt={receptionLocation}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -334,7 +340,7 @@ export function Details() {
             
             {/* Theme Badge */}
             <div className="mb-4">
-              <span className="text-xs sm:text-sm font-semibold text-[#402921] bg-[#CDAC77]/30 px-3 py-1.5 rounded-full">{typeof siteConfig.dressCode === 'object' ? siteConfig.dressCode.theme : siteConfig.dressCode}</span>
+              <span className="text-xs sm:text-sm font-semibold text-[#402921] bg-[#CDAC77]/30 px-3 py-1.5 rounded-full">Formal in Earth Color (everyone)</span>
             </div>
 
             {/* Color Palette */}
@@ -354,23 +360,7 @@ export function Details() {
               </div>
             )}
 
-            {/* Principal Sponsors */}
-            {typeof siteConfig.dressCode === 'object' && siteConfig.dressCode.sponsors && (
-              <div className="mb-4 bg-white/60 rounded-lg p-3 border border-[#BB8A3D]/25">
-                <p className="text-xs font-semibold text-[#402921] mb-2">Principal Sponsors</p>
-                <p className="text-xs text-[#402921] opacity-80 mb-1">Dress Code: Any shade of Gold</p>
-
-              </div>
-            )}
-
-            {/* Guests */}
-            {typeof siteConfig.dressCode === 'object' && siteConfig.dressCode.guests && (
-              <div className="mb-4 bg-white/60 rounded-lg p-3 border border-[#BB8A3D]/25">
-                <p className="text-xs font-semibold text-[#402921] mb-2">Guests</p>
-                <p className="text-xs text-[#402921] opacity-80 mb-1">Dress Code: Semi-formal (avoid casual attire)</p>
-                <p className="text-xs font-medium text-[#402921] opacity-90 bg-[#CDAC77]/25 px-2 py-1 rounded">⚠️ {siteConfig.dressCode.note}</p>
-              </div>
-            )}
+            
           </div>
 
           {/* Travel & Comfort - Combined */}
@@ -399,45 +389,7 @@ export function Details() {
                 </div>
               </div>
 
-              {/* Transportation */}
-              <div className="bg-gradient-to-br from-white to-[#CDAC77]/20 rounded-xl p-3 sm:p-4 border-2 border-[#BB8A3D]/30 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="flex items-start gap-2 mb-2">
-                  <div className="bg-[#CDAC77]/25 p-1.5 rounded-full mt-0.5">
-                    <Navigation className="w-3 h-3 text-[#402921]" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-xs font-semibold text-[#402921] mb-1">Transportation</p>
-                    <p className="text-xs text-[#402921] opacity-70 leading-relaxed mb-2">
-                      💡 Book transportation in advance for a stress-free day
-                    </p>
-                    <p className="text-xs text-[#402921] opacity-70 leading-relaxed">
-                      Taxis, Grab, and private vehicles are welcome. Both venues are easily accessible.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Travel Tips */}
-              <div className="bg-gradient-to-br from-[#402921]/80 to-[#583016]/70 rounded-xl p-3 sm:p-4 border-2 border-[#BB8A3D]/40 shadow-sm">
-                <p className="text-xs font-semibold text-[#FFF6E7] mb-2 flex items-center gap-1.5">
-                  <span className="text-sm">📍</span>
-                  Quick Tips
-                </p>
-                <ul className="text-xs text-[#FFF6E7] space-y-1.5">
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#FFF6E7] mt-0.5">•</span>
-                    <span>Plan your route ahead of time to avoid delays</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#FFF6E7] mt-0.5">•</span>
-                    <span>Wear comfortable shoes for easy movement</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#FFF6E7] mt-0.5">•</span>
-                    <span>Coordinate with friends for carpooling</span>
-                  </li>
-                </ul>
-                </div>
+              
               </div>
             </div>
           </div>
@@ -494,8 +446,8 @@ export function Details() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 animate-shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-0" />
               
               <Image
-                src={showImageModal === 'ceremony' ? "/Details/church.png" : "/Details/D-L-Garden.png"}
-                alt={showImageModal === 'ceremony' ? siteConfig.ceremony.location : siteConfig.reception.location}
+                src={showImageModal === 'ceremony' ? "/Details/church.png" : "/Details/citystateasturiashotel.png"}
+                alt={showImageModal === 'ceremony' ? ceremonyLocation : receptionLocation}
                 fill
                 className="object-contain p-6 sm:p-8 md:p-10 transition-transform duration-700 group-hover:scale-105 z-10"
                 sizes="95vw"
@@ -518,11 +470,11 @@ export function Details() {
                       ) : (
                         <Utensils className="w-6 h-6 text-[#BB8A3D]" />
                       )}
-                      {showImageModal === 'ceremony' ? siteConfig.ceremony.venue : siteConfig.reception.venue}
+                      {showImageModal === 'ceremony' ? ceremonyVenue : receptionVenue}
                     </h3>
                     <div className="flex items-center gap-2 text-sm text-[#402921] opacity-70">
                       <MapPin className="w-4 h-4 text-[#BB8A3D]" />
-                      <span>{showImageModal === 'ceremony' ? siteConfig.ceremony.location : siteConfig.reception.location}</span>
+                      <span>{showImageModal === 'ceremony' ? ceremonyLocation : receptionLocation}</span>
           </div>
 
                     {/* Date & Time info */}
@@ -545,8 +497,8 @@ export function Details() {
                     <button
                       onClick={() => copyToClipboard(
                         showImageModal === 'ceremony' 
-                          ? siteConfig.ceremony.location
-                          : siteConfig.reception.location,
+                          ? ceremonyLocation
+                          : receptionLocation,
                         `modal-${showImageModal}`
                       )}
                       className="flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 bg-white border-2 border-[#BB8A3D] text-[#402921] rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 shadow-md hover:bg-[#CDAC77]/15 whitespace-nowrap"

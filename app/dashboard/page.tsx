@@ -117,7 +117,7 @@ export default function DashboardPage() {
   })
 
   // Password - you can change this!
-  const DASHBOARD_PASSWORD = "wedding2026" // Change this to your preferred password
+  const DASHBOARD_PASSWORD = "RA2025" // Change this to your preferred password
 
   // Check if already authenticated
   useEffect(() => {

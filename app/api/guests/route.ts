@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzyRz2FAGgEvY2ACWD9tItrnK4Q4IhAzAE3MFeCoFluu4BX4GEUEzSE1Ioue3WHKugp/exec'
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzGM5UP2c4AY50OKNcvrKiI18IChPieMvH6qCE0EJMreSSzgCTxI9oON8wXnwZoKXdSvw/exec'
 
 // Guest interface matching the Google Sheets structure
 export interface Guest {

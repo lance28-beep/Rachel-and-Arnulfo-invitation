@@ -1,41 +1,41 @@
 export const siteConfig = {
   couple: {
-    bride: "Erda Precious Ricohermoso",
-    brideNickname: "Erda",
-    groom: "Russell Ticbaen",
-    groomNickname: "Russell",
+    bride: "Rachel",
+    brideNickname: "Rachel",
+    groom: "Arnulfo",
+    groomNickname: "Arnulfo",
   },
   wedding: {
-    date: "January 10, 2026",
-    time: "2:00 PM",
-    venue: "San Jose the Husband of Mary Parish, Buyagan, La Trinidad, Benguet",
-    tagline: "are getting married!",
+    date: "December 4 2025",
+    time: "4:00 PM",
+    venue: "Holy Cross Chapel, 570TH",
+    tagline: "Our Golden Journey",
     theme: "Classic",
-    motif: "#402921, #BB8A3D, #CDAC77, #FFF6E7",
+    motif: "#866347, #C9A58D, #CEB08E, #F1E8E3, #FFE5E4",
   },
   details: {
     rsvp: {
-      deadline: "January 8, 2026",
+      deadline: "November 20, 2025",
     },
   },
   ceremony: {
-    location: "San Jose the Husband of Mary Parish, Buyagan, La Trinidad, Benguet",
-    venue: "San Jose the Husband of Mary Parish",
-    date: "January 10, 2026",
-    day: "Saturday",
-    time: "2:00 PM",
-    entourageTime: "2:00 PM",
-    guestsTime: "2:00 PM",
+    location: "Holy Cross Chapel, 570TH",
+    venue: "Holy Cross Chapel, 570TH",
+    date: "December 4 2025",
+    day: "Thursday",
+    time: "4:00 PM",
+    entourageTime: "4:00 PM",
+    guestsTime: "4:00 PM",
   },
   reception: {
-    location: "D & L Garden Pavilion, Halsema Highway, La Trinidad, Benguet",
-    venue: "D & L Garden Pavilion",
-    date: "January 10, 2026",
+    location: "CityState Asturias Hotel, Palawan, Philippines",
+    venue: "CityState Asturias Hotel",
+    date: "December 4 2025",
     time: "Following the ceremony",
   },
   dressCode: {
     theme: "Semi-Formal Attire",
-    colors: ["#402921", "#BB8A3D", "#CDAC77", "#FFF6E7"],
+    colors: ["#866347", "#C9A58D", "#CEB08E", "#F1E8E3", "#FFE5E4"],
     sponsors: {
       ladies: "Blue gown / long dress",
       gentlemen: "Black suit and tie"
@@ -46,102 +46,53 @@ export const siteConfig = {
     },
     note: "Please avoid jeans and casual attire."
   },
-  narrative: `It all started right here — where fate decided our paths should cross. \n
-“Yes, beb, dito kami nagkakilala,” Erda says with a smile. \n
-One day, Russell suddenly went down to Manila — without her knowing. Then came that unforgettable call while he was in a taxi: \n
-“Paano pumunta ng Angono?” he asked. \n
-And just like that, her heart (and her hair) grew a little longer that day. 😉 \n
-Twelve years later — after countless memories, laughter, and adventures — their love has only grown deeper. Together, they’ve built a beautiful life and now share it with the greatest blessing of all: their wonderful child, who completed their lovely family. 💖 \n
-From that first “Hi, babe” to this “I do,” their story has always been written with love — and it’s only the beginning. 💍✨ \n `,
+  narrative: `Once upon a time, in a small town filled with the scent of 
+  old streets and tricycles buzzing around, there lived a humble sales 
+  lady named Bhabes. Every day, she stood behind the counter of a modest 
+  store, greeting clients with her kind smile and gentle heart. \n
+
+One afternoon, fate walked in wearing a crisp Air Force uniform. 
+His name was Bhars—a young Air Force man with a proud stance and 
+a warm, steady gaze. What started as a simple window shopping 
+turned into countless visits, each one filled with shy smiles and heartfelt conversations. \n
+
+Soon, love blossomed quietly between the shelves and the sound of laughter. 
+It was simple, sincere, and strong—the kind of love that could weather time and distance. \n
+
+After they married, Bhars saw the light in Bhabes eyes whenever she 
+helped the neighborhood children with their schoolwork. He encouraged 
+her to dream bigger, to chase the education she once set aside. 
+And with his unwavering support, Bhabes went back to school. \n
+
+It wasn’t easy—between raising three sons, studying late at night, 
+nd keeping the home together—but together they made it through. 
+Eventually, Bhabes became a teacher, shaping young minds with the 
+same warmth and patience that once filled her tiny store. \n
+
+Years turned into decades. Bhars served his country with honor, 
+and Bhabes served her community with love. Their three sons grew 
+up watching two hearts work hand in hand—proving that true partnership 
+means lifting each other higher. \n
+
+Now, both retired, they sit side by side on their porch as the 
+sun sets—she with her books, he with his stories of the skies. 
+He often teases her, saying, “Who knew a simple window shopping 
+could lead me to my forever?” She laughs and replies, “And who knew a 
+simple sales lady could fall in love with a man who reached for the clouds?” \n
+
+Their story is more than a love story—it’s a legacy of faith, 
+perseverance, and shared dreams. A reminder that when love is built 
+on respect and sacrifice, it only grows stronger through time. \n
+
+From a store counter to the skies above, their love 
+has truly soared—proof that the simplest beginnings 
+can lead to the most beautiful forever. \n `,
   giftNote: `With all that we have, we are truly blessed. Your presence and prayer are all that we request. \n
 But if you desire to give nonetheless, a monetary gift is the one we suggest.`,
   colors: {
-    primary: "#525E2C",
-    secondary: "#909E8D",
+    primary: "#866347",
+    secondary: "#C9A58D",
   },
 }
 
-export const entourage = [
-  // Best Man & Maid/Matron of Honor
-  { role: "Best Man", name: "Red Casallo" },
-  { role: "Matron of Honor", name: "Imeeliza Timpug" },
 
-  // Parents of the Bride
-  { role: "Father", name: "Jaime Balajadia (Uncle)", group: "kate-family" },
-  { role: "Mother", name: "Eloida Ricohermoso", group: "kate-family" },
-
-  // Parents of the Groom
-  { role: "Brother", name: "Perry Ticbaen (Brother)", group: "christian-family" },
-  { role: "Mother", name: "Felicitas Ticbaen", group: "christian-family" },
-
-  // Bridesmaids
-  { role: "Bridesmaid", name: "Thea Lynn Dela Cruz" },
-  { role: "Bridesmaid", name: "Keara Zane A Cariño" },
-  { role: "Bridesmaid", name: "Fidnah Gracia Padallan" },
-  { role: "Bridesmaid", name: "Lorna Ladisla" },
-  { role: "Bridesmaid", name: "Carla Vanessa Tabilin" },
-  { role: "Bridesmaid", name: "Romela Tolentino" },
-  { role: "Bridesmaid", name: "Emmalyn Lipio" },
-  { role: "Bridesmaid", name: "Carmen Pascual" },
-  { role: "Bridesmaid", name: "Ciddie Manota" },
-
-  // Groomsmen
-  { role: "Groomsman", name: "Noah Alcaria" },
-  { role: "Groomsman", name: "Jervin Garcia" },
-  { role: "Groomsman", name: "Myric Mateo" },
-  { role: "Groomsman", name: "Caughvan Faustino" },
-  { role: "Groomsman", name: "Jayson Torquiano" },
-  { role: "Groomsman", name: "Jendah Egino" },
-  { role: "Groomsman", name: "Vincent Saguinsin" },
-  { role: "Groomsman", name: "Frederick Manota" },
-  { role: "Groomsman", name: "Emerson Sulit" },
-
-  // Secondary Sponsors
-  // Candle Sponsors
-  { role: "Bridesmaid", name: "Romela Tolentino", group: "candle" },
-  // Veil Sponsors
-  { role: "Bridesmaid", name: "Carla Vanessa Tabilin", group: "veil" },
-  // Cord Sponsors
-  { role: "Bridesmaid", name: "Emmalyn Lipio", group: "cord" },
-
-  // Flower Girls and Little Bride
-  { role: "Flower Girl", name: "Kirsten Elija Leyson" },
-  { role: "Flower Girl", name: "Blake Juan" },
-  { role: "Flower Girl", name: "Reign Arastel Rivera" },
-  { role: "Little Bride", name: "Paige Yael Ticbaen" },
-
-  // Ring / Coin Bearers
-  { role: "Ring Bearer", name: "Khaleb Dwayne M. Beltran" },
-  { role: "Coin Bearer", name: "Lucas Rhaiden Beltran" },
-  { role: "Ring Bearer", name: "Dean James Ticbaen" },
-]
-
-export const principalSponsors = [
-  // Paired from provided Male and Female Sponsors (order-based)
-  { name: "Mr. Jony Balao", spouse: "Mrs. Conception Balao" },
-  { name: "Mr. Cresencio Francisco", spouse: "Dr. Editha Francisco" },
-  { name: "Mr. Aurelio Sab-it", spouse: "Mrs. Ester Sab-it" },
-  { name: "Mr. Pio McLiing", spouse: "Mrs. Edna Boloma" },
-  { name: "Mr. Fabian Dupiano", spouse: "Mrs. Mary Christine Dupiano" },
-  { name: "Mr. Roberto Dosdos", spouse: "Mrs. Angelica Dosdos" },
-  { name: "Mr. George Sacla", spouse: "Mrs. Minda De Bolt Sacla" },
-  { name: "Mr. Elmo Casallo", spouse: "Mrs. Nora Casallo" },
-  { name: "Engr. Jimmy Atayoc Sr", spouse: "Mrs. Mercedes Atayoc" },
-  { name: "Mr. Tomas Moyongan", spouse: "Mrs. Betty Moyongan" },
-  { name: "Mr. Roger Balantin", spouse: "Mrs. Delia Balantin" },
-  { name: "Honorable Mayor Roderick Awingan", spouse: "Mrs. ____ Awingan" },
-  { name: "Engr Roy Kepes", spouse: "Vice Gove MaryRose Kepes Fongwan" },
-  { name: "Mr. Bobos Nestor Fongwan", spouse: "Mrs. Marga Sison" },
-  { name: "Mr. Junvic Suguinsin", spouse: "Mrs. Lavenia Inson" },
-  { name: "Mr. Salino Dosdos Jr", spouse: "Mrs. Gina Guiang" },
-  { name: "Mr. Pampilo Balajadia", spouse: "Mrs. Angelica Balajadia" },
-  { name: "Mr. Alan M. Serduar", spouse: "Mrs. Oliva Serduar" },
-  { name: "Mr. Miguel Franco", spouse: "Mrs. Angela Balajadia" },
-  // Remaining Female Sponsors without paired male
-  { name: "Mrs. Carina C. Watanabe", spouse: "" },
-  { name: "Mrs. Cecile Palilio", spouse: "" },
-  { name: "Mrs. Nida Saguinsin", spouse: "" },
-  { name: "Mrs. Araceli Pitogo", spouse: "" },
-  { name: "Mrs. Alda Unidad", spouse: "" },
-  { name: "Mrs. Reine Bernadeth Bolanos", spouse: "" },
-]

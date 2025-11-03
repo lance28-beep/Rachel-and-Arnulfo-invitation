@@ -8,9 +8,10 @@ interface ButtonProps {
   href?: string
   variant?: "primary" | "secondary" | "outline"
   className?: string
+  download?: boolean
 }
 
-export function Button({ children, onClick, href, variant = "primary", className = "" }: ButtonProps) {
+export function Button({ children, onClick, href, variant = "primary", className = "", download = false }: ButtonProps) {
   const baseStyles = "px-6 py-3 rounded-lg font-medium transition-colors inline-block"
   const variants = {
     primary: "bg-primary text-white hover:bg-primary/90",
@@ -20,7 +21,7 @@ export function Button({ children, onClick, href, variant = "primary", className
 
   if (href) {
     return (
-      <a href={href} className={`${baseStyles} ${variants[variant]} ${className}`}>
+      <a href={href} className={`${baseStyles} ${variants[variant]} ${className}`} {...(download ? { download: true } : {})}>
         {children}
       </a>
     )

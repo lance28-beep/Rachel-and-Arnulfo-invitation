@@ -9,25 +9,25 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400", variable: "--font-serif" })
 
 export const metadata: Metadata = {
-  title: "Erda & Russell - Wedding Invitation",
+  title: "Rachel & Arnulfo - Wedding Invitation",
   description:
-    "You're invited to the wedding of Erda & Russell! Join us on January 10, 2026 in La Trinidad, Benguet. RSVP, read our love story, view our gallery, and leave a message for the couple.",
+    "You're invited to the wedding of Rachel & Arnulfo! Join us on December 4, 2025 in Palawan, Philippines. RSVP, read our love story, view our gallery, and leave a message for the couple.",
   keywords:
-    "Christian Kate wedding, Filipino wedding, RSVP, wedding gallery, wedding message wall, wedding invitation, 2026 weddings, love story, guestbook, wedding registry, wedding details, wedding venues Cebu, #ChristianAndKateWedding",
+    "Rachel & Arnulfo wedding, Filipino wedding, RSVP, wedding gallery, wedding message wall, wedding invitation, 2025 weddings, love story, guestbook, wedding registry, wedding details, wedding venues Palawan, #RachelAndArnulfoWedding",
   authors: [
-    { name: "Erda" },
-    { name: "Russell" },
+    { name: "Rachel" },
+    { name: "Arnulfo" },
   ],
-  creator: "Erda & Russell",
-  publisher: "Erda & Russell",
+  creator: "Rachel & Arnulfo",
+  publisher: "Rachel & Arnulfo",
   formatDetection: {
     email: false,
     address: false,
     telephone: true,
   },
-  metadataBase: new URL("https://Erda-and-Russell-invitation.vercel.app/"),
+  metadataBase: new URL("https://Rachel-and-Arnulfo-invitation.vercel.app/"),
   alternates: {
-    canonical: "https://Erda-and-Russell-invitation.vercel.app/",
+    canonical: "https://Rachel-and-Arnulfo-invitation.vercel.app/",
   },
   icons: {
     icon: [
@@ -49,29 +49,29 @@ export const metadata: Metadata = {
   },
   manifest: "/favicon_io/site.webmanifest",
   openGraph: {
-    title: "Erda & Russell Wedding | January 10, 2026",
+    title: "Rachel & Arnulfo Wedding | December 4, 2025",
     description:
-      "Celebrate the union of Erda & Russell on January 10, 2026 in La Trinidad, Benguet. Discover our love story, RSVP, view the gallery, and leave your wishes!",
-    url: "https://Erda-and-Russell-invitation.vercel.app/",
-    siteName: "Erda & Russell Wedding",
+      "Celebrate the union of Rachel & Arnulfo on December 4, 2025 in Palawan, Philippines. Discover our love story, RSVP, view the gallery, and leave your wishes!",
+    url: "https://Rachel-and-Arnulfo-invitation.vercel.app/",
+    siteName: "Rachel & Arnulfo Wedding",
     locale: "en_PH",
     type: "website",
     images: [
       {
-        url: "https://Erda-and-Russell-invitation.vercel.app/Couple_img/couple (1).jpg",
+        url: "https://Rachel-and-Arnulfo-invitation.vercel.app/invitation.jpg",
         width: 1200,
         height: 630,
-        alt: "Erda & Russell Wedding Invitation - January 10, 2026",
+        alt: "Rachel & Arnulfo Wedding Invitation - December 4, 2025",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Erda & Russell Wedding Invitation",
+    title: "Rachel & Arnulfo Wedding Invitation",
     description:
-      "You're invited to the wedding of Erda & Russell! January 10, 2026. RSVP, view our gallery, and leave a message! #ErdaAndRussellWedding",
-    images: ["https://Erda-and-Russell-invitation.vercel.app/Couple_img/couple (1).jpg"],
-    creator: "@erdaandrussell",
+      "You're invited to the wedding of Rachel & Arnulfo! December 4, 2025. RSVP, view our gallery, and leave a message! #RachelAndArnulfoWedding",
+    images: ["https://Rachel-and-Arnulfo Wedding-invitation.vercel.app/invitation.jpg"],
+    creator: "@rachelandarnulfo",
   },
   robots: {
     index: true,
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Event",
-      name: "Erda & Russell Wedding",
+      name: "Rachel & Arnulfo Wedding",
       startDate: "2026-01-10T14:00:00+08:00",
       endDate: "2026-01-10T22:00:00+08:00",
       eventStatus: "https://schema.org/EventScheduled",
@@ -99,29 +99,29 @@ export const metadata: Metadata = {
       location: [
         {
           "@type": "Place",
-          name: "San Jose the Husband of Mary Parish",
+          name: "Holy Cross Chapel",
           address: {
             "@type": "PostalAddress",
-            addressLocality: "Buyagan, La Trinidad, Benguet",
+            addressLocality: "Puerto Princesa City, Palawan",
             addressCountry: "PH",
           },
         },
       ],
-      image: ["https://Erda-and-Russell-invitation.vercel.app/Couple_img/couple (1).jpg"],
+      image: ["https://Rachel-and-Arnulfo-invitation.vercel.app/invitation.jpg"],
       description:
-        "You're invited to the wedding of Erda & Russell! Join us on January 10, 2026 in La Trinidad, Benguet. RSVP, read our love story, view our gallery, and leave a message for the couple.",
+        "You're invited to the wedding of Rachel & Arnulfo! Join us on December 4, 2025 in Palawan, Philippines. RSVP, read our love story, view our gallery, and leave a message for the couple.",
       organizer: {
         "@type": "Person",
-        name: "Erda & Russell",
+        name: "Rachel & Arnulfo",
       },
       offers: {
         "@type": "Offer",
-        url: "https://Erda-and-Russell-invitation.vercel.app/",
+        url: "https://Rachel-and-Arnulfo-invitation.vercel.app/",
         availability: "https://schema.org/InStock",
         price: "0",
         priceCurrency: "PHP",
       },
-      eventHashtag: "#ErdaAndRussellWedding",
+      eventHashtag: "#RachelAndArnulfoWedding",
     }),
   },
 }
@@ -134,7 +134,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="theme-color" content="#525E2C" />
+        <meta name="theme-color" content="#866347" />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={`${inter.variable} ${greatVibes.variable} font-inter antialiased text-foreground`}>

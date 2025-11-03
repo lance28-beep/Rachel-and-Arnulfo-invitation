@@ -1,14 +1,33 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
+import NextImage from "next/image"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 import { Section } from "@/components/section"
 // Removed circular gallery in favor of a responsive masonry layout
 
 const galleryItems = [
-  { image: "/Couple_img/couple (1).jpg", text: " " },   
-  { image: "/Couple_img/couple (2).jpg", text: " " },
+  { image: "/Couple_img/couple (8).jpg", text: " " },   
+  { image: "/Couple_img/couple (14).jpg", text: " " },
   { image: "/Couple_img/couple (3).jpg", text: " " },
+  { image: "/Couple_img/couple (18).jpg", text: " " },
+  { image: "/Couple_img/couple (5).jpg", text: " " },
+  { image: "/Couple_img/couple (9).jpg", text: " " },
+  { image: "/Couple_img/couple (7).jpg", text: " " },
+  { image: "/Couple_img/couple (21).jpg", text: " " },
+  { image: "/Couple_img/couple (6).jpg", text: " " },
+  { image: "/Couple_img/couple (10).jpg", text: " " },
+  { image: "/Couple_img/couple (11).jpg", text: " " },
+  { image: "/Couple_img/couple (12).jpg", text: " " },
+  { image: "/Couple_img/couple (13).jpg", text: " " },
+  { image: "/Couple_img/couple (2).jpg", text: " " },
+  { image: "/Couple_img/couple (15).jpg", text: " " },
+  { image: "/Couple_img/couple (16).jpg", text: " " },
+  { image: "/Couple_img/couple (17).jpg", text: " " },
+  { image: "/Couple_img/couple (3).jpg", text: " " },
+  { image: "/Couple_img/couple (19).jpg", text: " " },
+  { image: "/Couple_img/couple (20).jpg", text: " " },
+  { image: "/Couple_img/couple (1).jpg", text: " " },
 
 ]
 
@@ -185,6 +204,23 @@ export function Gallery() {
                 
                 {/* Gallery content */}
                 <div className="relative z-10 w-full">
+                  {/* Slow infinite marquee strip */}
+                  <div className="relative mb-6 sm:mb-8 overflow-hidden rounded-lg border border-[#BB8A3D]/40 bg-[#FFF6E7]/50">
+                    <div className="flex gap-3 sm:gap-4 will-change-transform" style={{ animation: 'marquee 60s linear infinite' }}>
+                      {[...galleryItems, ...galleryItems].map((item, idx) => (
+                        <div key={`marquee-${idx}-${item.image}`} className="relative h-24 sm:h-28 md:h-32 w-36 sm:w-40 md:w-48 shrink-0">
+                          <NextImage
+                            src={item.image}
+                            alt={item.text}
+                            fill
+                            loading="lazy"
+                            sizes="(min-width: 1024px) 12rem, (min-width: 640px) 10rem, 9rem"
+                            className="object-cover rounded-md"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                   {isLoading ? (
                     <div className="flex items-center justify-center h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px]">
                       <div className="w-16 h-16 border-4 border-[#BB8A3D]/30 border-t-[#BB8A3D] rounded-full animate-spin" />
@@ -192,7 +228,10 @@ export function Gallery() {
                   ) : null}
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4">
-                    {galleryItems.map((item, index) => (
+                    {galleryItems
+                      .map((item, index) => ({ item, index }))
+                      .slice(0, 6)
+                      .map(({ item, index }) => (
                       <button
                         key={item.image + index}
                         type="button"
@@ -203,14 +242,14 @@ export function Gallery() {
                         }}
                         aria-label={`Open image ${index + 1}`}
                       >
-                        <div className="aspect-[3/4] md:aspect-square">
-                          <img
+                        <div className="aspect-[3/4] md:aspect-square relative">
+                          <NextImage
                             src={item.image}
                             alt={item.text}
+                            fill
                             loading="lazy"
-                            decoding="async"
                             sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
-                            className="w-full h-full object-cover align-top transition-transform duration-300 group-hover:scale-[1.03]"
+                            className="object-cover align-top transition-transform duration-300 group-hover:scale-[1.03]"
                           />
                         </div>
                         {/* Subtle overlay caption */}
@@ -222,6 +261,24 @@ export function Gallery() {
                       </button>
                     ))}
                   </div>
+
+                  {/* View more CTA */}
+                  {galleryItems.length > 6 && (
+                    <div className="mt-4 sm:mt-6 flex justify-center">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const startIndex = Math.min(6, galleryItems.length - 1)
+                          setCurrentIndex(startIndex)
+                          setSelectedImage(galleryItems[startIndex])
+                        }}
+                        className="px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-[#BB8A3D] via-[#CDAC77] to-[#BB8A3D] text-white text-sm sm:text-base font-sans font-semibold shadow-[0_6px_18px_rgba(64,41,33,0.25)] hover:shadow-[0_10px_28px_rgba(64,41,33,0.35)] transition-all border border-[#BB8A3D]/40 hover:scale-[1.02] active:scale-[0.98]"
+                        aria-label="View more photos"
+                      >
+                        View more photos
+                      </button>
+                    </div>
+                  )}
                 </div>
                 
                 {/* Enhanced decorative sparkle effects */}
@@ -332,12 +389,21 @@ export function Gallery() {
                 className="relative inline-block"
                 onClick={(e) => e.stopPropagation()}
               >
-                <img
-                  src={selectedImage.image || "/placeholder.svg"}
-                  alt={selectedImage.text}
+                <div
+                  className="relative max-w-full max-h-[70vh] sm:max-h-[80vh] rounded-lg shadow-2xl will-change-transform"
                   style={{ transform: `translate3d(${pan.x}px, ${pan.y}px, 0) scale(${zoomScale})`, transition: pinchStartDist ? 'none' : 'transform 200ms ease-out' }}
-                  className="max-w-full max-h-[70vh] sm:max-h-[80vh] object-contain rounded-lg shadow-2xl will-change-transform"
-                />
+                >
+                  <div className="relative w-[90vw] sm:w-[80vw] md:w-[70vw] h-[60vh] sm:h-[70vh]">
+                    <NextImage
+                      src={selectedImage.image || "/placeholder.svg"}
+                      alt={selectedImage.text}
+                      fill
+                      loading="lazy"
+                      sizes="(min-width: 1024px) 70vw, (min-width: 640px) 80vw, 90vw"
+                      className="object-contain rounded-lg"
+                    />
+                  </div>
+                </div>
                 {/* Close button anchored to image corner */}
                 <button
                   onClick={(e) => {
@@ -377,6 +443,12 @@ export function Gallery() {
           </div>
         </div>
       )}
+      <style jsx>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
     </Section>
   )
 }
