@@ -7,7 +7,13 @@
     "dev": "next dev",
     "lint": "eslint .",
     "start": "next start",
-    "images:webp": "tsx scripts/convert-to-webp.ts"
+    "images:webp": "tsx scripts/convert-to-webp.ts",
+    "analyze": "ANALYZE=true next build",
+    "lighthouse": "lhci autorun --config=lighthouse.config.js",
+    "lighthouse:mobile": "lighthouse http://localhost:3000 --view --preset=mobile --chrome-flags='--headless'",
+    "lighthouse:desktop": "lighthouse http://localhost:3000 --view --preset=desktop --chrome-flags='--headless'",
+    "perf:test": "bash scripts/performance-test.sh",
+    "perf:full": "bash scripts/performance-test.sh --full"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
@@ -74,10 +80,13 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.12.0",
+    "@next/bundle-analyzer": "^15.0.0",
     "@tailwindcss/postcss": "^4.1.9",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "lighthouse": "^11.7.1",
     "postcss": "^8.5",
     "sharp": "^0.34.4",
     "tailwindcss": "^4.1.9",

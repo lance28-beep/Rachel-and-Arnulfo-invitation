@@ -5,8 +5,19 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Navbar } from "@/components/navbar"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400", variable: "--font-serif" })
+const inter = Inter({ 
+  subsets: ["latin"], 
+  variable: "--font-inter",
+  display: 'swap', // Prevent invisible text during font load
+  preload: true,
+})
+const greatVibes = Great_Vibes({ 
+  subsets: ["latin"], 
+  weight: "400", 
+  variable: "--font-serif",
+  display: 'swap',
+  preload: true,
+})
 
 export const metadata: Metadata = {
   title: "Rachel & Arnulfo - Wedding Invitation",
@@ -136,6 +147,11 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#866347" />
         <link rel="icon" href="/favicon.ico" />
+        {/* Preconnect to external domains for faster resource loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://vercel.com" />
+        {/* Fonts are automatically preloaded by Next.js font optimization */}
       </head>
       <body className={`${inter.variable} ${greatVibes.variable} font-inter antialiased text-foreground`}>
         <Navbar />

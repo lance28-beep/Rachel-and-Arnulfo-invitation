@@ -96,6 +96,19 @@ SilkPlane.displayName = "SilkPlane"
 const Silk = ({ speed = 5, scale = 1, color = "#909E8D", noiseIntensity = 1.5, rotation = 0 }) => {
   const meshRef = useRef()
 
+  // Detect low-end devices for performance optimization
+  const deviceCapability = useMemo(() => {
+    if (typeof window === 'undefined') return { dpr: [1, 1.5], frameloop: 'demand' }
+    const hardwareConcurrency = navigator.hardwareConcurrency || 2
+    const deviceMemory = (navigator as any).deviceMemory || 2
+    const isLowEnd = hardwareConcurrency < 4 || deviceMemory < 4
+    
+    return {
+      dpr: isLowEnd ? [1] : [1, 1.5], // Lower DPR on low-end devices
+      frameloop: isLowEnd ? 'demand' : 'always', // Reduce animation on low-end
+    }
+  }, [])
+
   const uniforms = useMemo(
     () => ({
       uSpeed: { value: speed },
@@ -109,7 +122,12 @@ const Silk = ({ speed = 5, scale = 1, color = "#909E8D", noiseIntensity = 1.5, r
   )
 
   return (
-    <Canvas dpr={[1, 2]} frameloop="always">
+    <Canvas 
+      dpr={deviceCapability.dpr} 
+      frameloop={deviceCapability.frameloop}
+      gl={{ antialias: false, alpha: true }}
+      performance={{ min: 0.5 }}
+    >
       <SilkPlane ref={meshRef} uniforms={uniforms} />
     </Canvas>
   )
